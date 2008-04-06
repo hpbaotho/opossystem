@@ -22,6 +22,10 @@
     <File name="ISQLServer.cs" subtype="Code" buildaction="Compile" />
     <File name="ISocketServer.cs" subtype="Code" buildaction="Compile" />
     <File name="ISocket.cs" subtype="Code" buildaction="Compile" />
+    <File name="ISQLRequest.cs" subtype="Code" buildaction="Compile" />
+    <File name="ISQLResult.cs" subtype="Code" buildaction="Compile" />
+    <File name="IXMLRPCMethod.cs" subtype="Code" buildaction="Compile" />
+    <File name="IXMLRPCResponse.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
