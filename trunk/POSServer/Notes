@@ -1,0 +1,59 @@
+// Notes created with MonoDevelop
+// User: nicholas at 9:45 PM 3/31/2008
+
+To begin, we need to address the looming question of architecture before we
+start laying down code.
+
+Obviously, what is our system ultimately doing.
+
+It is doing this: accepting TCP socket connections, parsing http requests, 
+parsing out the XML content from the http request, interpreting the XML
+content as an XMLRPC command, fulfilling the command, returning a meaningful
+value, package it up as an XMLRPC data structure, place it as content into an
+http response, serialize the http response and send it back over the tcp
+connection.
+
+In fulfilling the command, it will likely need to: send a request to the
+database (command object), received a result (result object), interpreting
+that result, etc.
+
+Socket server should be threaded with ascynchronous socket accepts happening.
+Take advantage of the framework on this one. No need to build a threadpool.
+
+The filter layer is next. Worker thread model. Small pool. Each thread
+processing the queue of items, taking the stream of data and converting it
+ultimately into a usable XMLRPC object. Put into execution queue.
+
+The execution layer should also be threaded; worker thread model. A small
+pool of threads will address the input queue, executing commands and
+potentially placing work items into the database queue and waiting for
+response. Waiting for the response will be synchronous.
+
+The database layer will also be threaded; worker thread model. SQLite is
+threadsafe, but the locking mechanism is implemented at the WHOLE FILE level.
+This means that concurrent reads will be fine, but concurrent reads and
+writes, or writes and writes,  will likely cause thread contention. We need to
+keep access to the database fairly limited, unless we end up using a real
+database.
+
+Once results are returned to the execution layer, an XMLRPC response object is
+generated and passed to the outbound filter queues for processing and
+serialization.
+
+After proper serialization, the results are sent back across the wire via the
+socket server.
+
+The socket server will own the sockets.
+
+To track all of this activity from thread to thread, from layer to layer, an
+all encompassing state object will need to be created and passed with the core
+data, in whatever form it happens to be. This will be necessary for proper
+addressing in the return result (ie, which socket should get what serialized
+response).
+
+As for specifics in database schemas, or what kind of methods are to be
+exposed via XMLRPC, those elements have yet to be determined. A proper use
+case analysis should be done on the minute functions of a POS system to
+determine requirements.
+
+
