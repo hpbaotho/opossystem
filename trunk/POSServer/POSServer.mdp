@@ -17,4 +17,7 @@
     <File name="Notes" subtype="Code" buildaction="Nothing" />
     <File name="ChangeLog" subtype="Code" buildaction="Nothing" />
   </Contents>
+  <References>
+    <ProjectReference type="Assembly" localcopy="True" refto="System.Data.SQLite.DLL" />
+  </References>
 </Project>
