@@ -17,12 +17,9 @@ In fulfilling the command, it will likely need to: send a request to the
 database (command object), received a result (result object), interpreting
 that result, etc.
 
-Socket server should be threaded with ascynchronous socket accepts happening.
-Take advantage of the framework on this one. No need to build a threadpool.
-
-The filter layer is next. Worker thread model. Small pool. Each thread
-processing the queue of items, taking the stream of data and converting it
-ultimately into a usable XMLRPC object. Put into execution queue.
+Managing all of the upfront work of processing the sockets, http requests,
+parsing out the xml content, generating the xmlrpc objects, etc will be
+handled by the XML-RPC.NET assembly.
 
 The execution layer should also be threaded; worker thread model. A small
 pool of threads will address the input queue, executing commands and
@@ -34,22 +31,15 @@ threadsafe, but the locking mechanism is implemented at the WHOLE FILE level.
 This means that concurrent reads will be fine, but concurrent reads and
 writes, or writes and writes,  will likely cause thread contention. We need to
 keep access to the database fairly limited, unless we end up using a real
-database.
+database or figure out how to manage a good memory cache changeset, and sync
+to the database at specified intervals.
 
-Once results are returned to the execution layer, an XMLRPC response object is
-generated and passed to the outbound filter queues for processing and
-serialization.
-
-After proper serialization, the results are sent back across the wire via the
-socket server.
-
-The socket server will own the sockets.
+Once results are returned to the execution layer, response object is
+generated and passed to the outbound queues for processing and serialization.
 
 To track all of this activity from thread to thread, from layer to layer, an
 all encompassing state object will need to be created and passed with the core
-data, in whatever form it happens to be. This will be necessary for proper
-addressing in the return result (ie, which socket should get what serialized
-response).
+data, in whatever form it happens to be.
 
 As for specifics in database schemas, or what kind of methods are to be
 exposed via XMLRPC, those elements have yet to be determined. A proper use
