@@ -19,5 +19,6 @@
   </Contents>
   <References>
     <ProjectReference type="Assembly" localcopy="True" refto="System.Data.SQLite.DLL" />
+    <ProjectReference type="Assembly" localcopy="True" refto="CookComputing.XmlRpcV2.dll" />
   </References>
 </Project>
