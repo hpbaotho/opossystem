@@ -27,6 +27,10 @@
     <File name="IXMLRPCMethod.cs" subtype="Code" buildaction="Compile" />
     <File name="IXMLRPCResponse.cs" subtype="Code" buildaction="Compile" />
     <File name="IXMLRPCClient.cs" subtype="Code" buildaction="Compile" />
+    <File name="IAuthenticationService.cs" subtype="Code" buildaction="Compile" />
+    <File name="AuthenticationToken.cs" subtype="Code" buildaction="Compile" />
+    <File name="AuthenticationRequest.cs" subtype="Code" buildaction="Compile" />
+    <File name="AuthenticationResponse.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
