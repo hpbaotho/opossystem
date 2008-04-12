@@ -15,18 +15,7 @@
   </Configurations>
   <Contents>
     <File name="AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
-    <File name="IXMLRPCServer.cs" subtype="Code" buildaction="Compile" />
     <File name="ChangeLog" subtype="Code" buildaction="Nothing" />
-    <File name="IFilter.cs" subtype="Code" buildaction="Compile" />
-    <File name="ICommandObj.cs" subtype="Code" buildaction="Compile" />
-    <File name="ISQLServer.cs" subtype="Code" buildaction="Compile" />
-    <File name="ISocketServer.cs" subtype="Code" buildaction="Compile" />
-    <File name="ISocket.cs" subtype="Code" buildaction="Compile" />
-    <File name="ISQLRequest.cs" subtype="Code" buildaction="Compile" />
-    <File name="ISQLResult.cs" subtype="Code" buildaction="Compile" />
-    <File name="IXMLRPCMethod.cs" subtype="Code" buildaction="Compile" />
-    <File name="IXMLRPCResponse.cs" subtype="Code" buildaction="Compile" />
-    <File name="IXMLRPCClient.cs" subtype="Code" buildaction="Compile" />
     <File name="IAuthenticationService.cs" subtype="Code" buildaction="Compile" />
     <File name="AuthenticationToken.cs" subtype="Code" buildaction="Compile" />
     <File name="AuthenticationRequest.cs" subtype="Code" buildaction="Compile" />
