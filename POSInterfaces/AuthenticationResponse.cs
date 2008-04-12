@@ -9,5 +9,7 @@ namespace POSInterfaces
     
     public struct AuthenticationResponse
     {
+        bool Result;
+        AuthenticationToken Token;
     }
 }
