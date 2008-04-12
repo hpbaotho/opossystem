@@ -1,5 +1,9 @@
 2008-04-11  Nicholas R. Perez <nicholasrperez@gmail.com> 
 
+	Let's clean these out for now and concentrate on concrete things.
+
+2008-04-11  Nicholas R. Perez <nicholasrperez@gmail.com> 
+
 	Tweaked various structs to be xmlrpc friendly (so we don't have to marshal ourselves)
 
 2008-04-11  Nicholas R. Perez <nicholasrperez@gmail.com> 
