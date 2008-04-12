@@ -9,5 +9,6 @@ namespace POSInterfaces
     
     public interface IAuthenticationService
     {
+        AuthenticationResponse Authenticate(AuthenticationRequest req);
     }
 }

@@ -9,5 +9,9 @@ namespace POSInterfaces
     
     public struct AuthenticationToken
     {
+        TimeSpan TTL;
+        DateTime Created;
+        string Value;
+        Uri Domain;
     }
 }

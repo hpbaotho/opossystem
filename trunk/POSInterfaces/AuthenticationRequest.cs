@@ -9,5 +9,8 @@ namespace POSInterfaces
     
     public struct AuthenticationRequest
     {
+        string UserName;
+        string Password;
+        string Domain;
     }
 }
