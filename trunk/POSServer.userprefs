@@ -1,13 +1,23 @@
 ﻿<UserCombinePreferences version="1.0" filename="/home/nicholas/code/mono/pos/POSServer.mds">
   <Files>
     <File name="Welcome" />
+    <File name="POSInterfaces/IAuthenticationService.cs" line="14" column="72" />
+    <File name="POSServer/POSServer.cs" line="16" column="32" />
+    <File name="POSServer/POSServer.exe.config" line="7" column="61" />
+    <File name="Services/AuthenticationService.cs" line="11" column="2" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
         <Node name="POSInterfaces" expanded="True" />
         <Node name="POSServer" expanded="True">
-          <Node name="ChangeLog" selected="True" />
+          <Option id="ShowVersionControlOverlays" value="True" />
+          <Option id="ShowAllFiles" value="False" />
+          <Option id="GroupCodeBehind" value="True" />
+          <Node name="References" expanded="True" />
+        </Node>
+        <Node name="Services" expanded="True">
+          <Node name="References" expanded="True" />
         </Node>
       </Node>
     </ViewMemento>
@@ -16,7 +26,7 @@
     </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="Welcome" />
+    <Property key="ActiveWindow" value="/home/nicholas/code/mono/pos/Services/AuthenticationService.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>

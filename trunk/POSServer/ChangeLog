@@ -1,5 +1,9 @@
 2008-04-11  Nicholas R. Perez <nicholasrperez@gmail.com> 
 
+	NUnit test added. Let's move toward test driven development.
+
+2008-04-11  Nicholas R. Perez <nicholasrperez@gmail.com> 
+
 	Main class added. Config file for remoting added. It actually runs at this point.
 
 2008-04-10  Nicholas R. Perez <nicholasrperez@gmail.com> 
