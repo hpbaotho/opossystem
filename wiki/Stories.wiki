@@ -1,7 +1,7 @@
 #summary Document containing our units of work and status
 
 =Stories=
-|| Name || Description || Owner || Status || Dependancy
-|| SASL Library|| We need to create our own SASL library for use in authentication. It should implement at a minimum DIGEST-MD5 || jspenderg || In-Progress || N/A
-|| Basic xmlrcp remoting server || This should be a basic husk that we can fill with services for the remote clients to use || nicholasrperez || Complete || N/A
-|| AuthenticationService || Basic authentication service that authenticates the client against the server and returns an authentication token that should be used for subsequent api calls || nicholasrperez || In-Progress || SASL Library 
+|| Name || Description || Owner || Status || Dependancy ||
+|| SASL Library|| We need to create our own SASL library for use in authentication. It should implement at a minimum DIGEST-MD5 || jspenderg || In-Progress || N/A ||
+|| Basic xmlrcp remoting server || This should be a basic husk that we can fill with services for the remote clients to use || nicholasrperez || Complete || N/A ||
+|| AuthenticationService || Basic authentication service that authenticates the client against the server and returns an authentication token that should be used for subsequent api calls || nicholasrperez || In-Progress || SASL Library ||
