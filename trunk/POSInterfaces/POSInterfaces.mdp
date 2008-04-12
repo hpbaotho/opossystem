@@ -34,5 +34,7 @@
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference type="Assembly" localcopy="True" refto="../POSServer/CookComputing.XmlRpcV2.dll" />
+    <ProjectReference type="Assembly" localcopy="True" refto="../POSServer/System.Data.SQLite.DLL" />
   </References>
 </Project>
