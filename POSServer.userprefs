@@ -5,18 +5,22 @@
     <File name="POSServer/POSServer.cs" line="16" column="32" />
     <File name="POSServer/POSServer.exe.config" line="7" column="61" />
     <File name="Services/AuthenticationService.cs" line="11" column="2" />
+    <File name="Services/AuthenticationServiceTest.cs" line="32" column="38" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
-        <Node name="POSInterfaces" expanded="True" />
-        <Node name="POSServer" expanded="True">
-          <Option id="ShowVersionControlOverlays" value="True" />
-          <Option id="ShowAllFiles" value="False" />
-          <Option id="GroupCodeBehind" value="True" />
+        <Option id="GroupCodeBehind" value="True" />
+        <Option id="ShowVersionControlOverlays" value="True" />
+        <Option id="ShowAllFiles" value="False" />
+        <Node name="Packages" expanded="True" />
+        <Node name="POSInterfaces" expanded="True">
           <Node name="References" expanded="True" />
         </Node>
-        <Node name="Services" expanded="True">
+        <Node name="POSServer" expanded="True">
+          <Node name="References" expanded="True" />
+        </Node>
+        <Node name="Services" expanded="True" selected="True">
           <Node name="References" expanded="True" />
         </Node>
       </Node>
@@ -24,9 +28,12 @@
     <ViewMemento id="ClassPad">
       <Node expanded="True" />
     </ViewMemento>
+    <ViewMemento id="MonoDevelop.NUnit.TestPad">
+      <Node expanded="True" />
+    </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="/home/nicholas/code/mono/pos/Services/AuthenticationService.cs" />
+    <Property key="ActiveWindow" value="/home/nicholas/code/mono/pos/Services/AuthenticationServiceTest.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>
