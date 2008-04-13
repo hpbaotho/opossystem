@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<project name="POSServer" default="build.solution" basedir=".">
+    
+    <description>Point of Sale Server</description>
+    
+    <property name="debug" value="true" />
+    <property name="release" value="false" /> 
+    <property name="optimize" value="true" />
+    <property name="include.path" value="./include/" />
+    <property name="output.path" value="./bin/Debug/" if="${debug}"/>
+    <property name="output.path" value="./bin/Release/" if="${release}"/>
+
+    <target 
+        name="clean" 
+        description="Delete generated files from the project">
+        
+        <delete failonerror="false">
+            
+            <fileset basedir="${output.path}">
+                
+                <include name="*.dll" />
+
+            </fileset>
+
+        </delete>
+        
+    </target>
+    
+    <target
+        name="build.solution"
+        description="Compile the total solution"
+        depends="build.POSInterfaces,build.Services,build.POSServer">
+
+        <copy todir="${output.path}" overwrite="true" >
+
+            <fileset basedir="${include.path}" >
+                <include name="*.dll" />
+            </fileset>
+
+        </copy>
+
+    </target>
+
+    <target 
+        name="build.POSServer" 
+        description="Compile POSServer" 
+        depends="build.POSInterfaces,build.Services">
+        
+        <property name="output.name" value="POSServer" />
+        
+        <csc 
+            target="exe" 
+            output="./${output.name}/${output.name}.exe" 
+            debug="${debug}"
+            optimize="${optimize}" >
+
+            <sources basedir="./${output.name}/">
+                
+                <include name="POSServer.cs" />
+
+            </sources>
+
+            <references basedir="${include.path}" >
+                
+                <include name="POSInterfaces.dll" />
+                <include name="Services.dll" />
+                <include name="System.dll" />
+                <include name="System.Runtime.Remoting" />
+                <include name="CookComputing.XmlRpcV2.dll" />
+                <include name="System.Data.SQLite.DLL" />
+
+            </references>
+
+        </csc>
+        
+        <copy todir="${output.path}" overwrite="true" >
+            
+            <fileset basedir="./${output.name}/" >
+                
+                <include name="${output.name}.exe" />
+                <include name="${output.name}.exe.mdb" />
+                <include name="${output.name}.exe.config" />
+
+            </fileset>
+
+        </copy>
+
+    </target>
+
+    <target 
+        name="build.Services" 
+        description="Compile Services"
+        depends="build.POSInterfaces">
+        
+        <property name="output.name" value="Services" />
+        
+        <csc 
+            target="library" 
+            output="./${output.name}/${output.name}.dll" 
+            debug="${debug}"
+            optimize="${optimize}" >
+
+            <sources basedir="./${output.name}/">
+                
+                <include name="AuthenticationService.cs" />
+                <include name="AuthenticationServiceTest.cs" />
+
+            </sources>
+
+            <references basedir="${include.path}" >
+                
+                <include name="POSInterfaces.dll" />
+                <include name="System.dll" />
+                <include name="CookComputing.XmlRpcV2.dll" />
+                <include name="System.Data.SQLite.DLL" />
+
+            </references>
+
+            <pkg-references>
+
+                <package name="nunit" />
+
+            </pkg-references>
+
+        </csc>
+        
+        <copy todir="${output.path}" overwrite="true" >
+            
+            <fileset basedir="./${output.name}/" >
+                
+                <include name="${output.name}.dll" />
+                <include name="${output.name}.dll.mdb" />
+
+            </fileset>
+
+        </copy>
+
+        <copy todir="${include.path}" overwrite="true" >
+            
+            <fileset basedir="./${output.name}/" >
+                
+                <include name="${output.name}.dll" />
+
+            </fileset>
+
+        </copy>
+
+    </target>
+    
+    <target name="build.POSInterfaces" description="Compile POSInterfaces">
+        
+        <property name="output.name" value="POSInterfaces" />
+        
+        <csc 
+            target="library" 
+            output="./${output.name}/${output.name}.dll" 
+            debug="${debug}"
+            optimize="${optimize}" >
+
+            <sources basedir="./${output.name}/">
+                
+                <include name="AssemblyInfo.cs" />
+                <include name="IAuthenticationService.cs" />
+                <include name="AuthenticationToken.cs" />
+                <include name="AuthenticationRequest.cs" />
+                <include name="AuthenticationResponse.cs" />
+
+            </sources>
+
+            <references basedir="${include.path}" >
+                    
+                <include name="System.dll" />
+                <include name="CookComputing.XmlRpcV2.dll" />
+                <include name="System.Data.SQLite.DLL" />
+
+            </references>
+
+        </csc>
+        
+        <copy todir="${output.path}" overwrite="true" >
+            
+            <fileset basedir="./${output.name}/" >
+                
+                <include name="${output.name}.dll" />
+                <include name="${output.name}.dll.mdb" />
+
+            </fileset>
+
+        </copy>
+
+        <copy todir="${include.path}" overwrite="true" >
+            
+            <fileset basedir="./${output.name}/" >
+                
+                <include name="${output.name}.dll" />
+
+            </fileset>
+
+        </copy>
+
+    </target>
+
+</project>
