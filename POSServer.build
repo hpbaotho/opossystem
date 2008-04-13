@@ -14,7 +14,8 @@
     <target 
         name="clean" 
         description="Delete generated files from the project">
-        
+       
+
         <delete failonerror="false">
             
             <fileset basedir="${output.path}">
