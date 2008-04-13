@@ -40,6 +40,21 @@
 
         </copy>
 
+        <nunit2>
+            
+            <formatter 
+                type="Xml"
+                outputdir="test-results"
+                usefile="true"/>
+            
+            <test>
+                <assemblies basedir="${output.path}">
+                    <include name="Services.dll" />
+                </assemblies>
+            </test>
+            
+        </nunit2>
+
     </target>
 
     <target 
