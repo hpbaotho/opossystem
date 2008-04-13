@@ -13,15 +13,14 @@
         <Option id="GroupCodeBehind" value="True" />
         <Option id="ShowVersionControlOverlays" value="True" />
         <Option id="ShowAllFiles" value="False" />
-        <Node name="Packages" expanded="True" />
         <Node name="POSInterfaces" expanded="True">
           <Node name="References" expanded="True" />
         </Node>
         <Node name="POSServer" expanded="True">
           <Node name="References" expanded="True" />
         </Node>
-        <Node name="Services" expanded="True" selected="True">
-          <Node name="References" expanded="True" />
+        <Node name="Services" expanded="True">
+          <Node name="References" expanded="True" selected="True" />
         </Node>
       </Node>
     </ViewMemento>
