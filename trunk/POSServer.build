@@ -44,6 +44,7 @@
             
             <formatter 
                 type="Xml"
+                extension=".xml"
                 outputdir="test-results"
                 usefile="true"/>
             
