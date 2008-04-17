@@ -5,12 +5,14 @@
       <Entry build="True" name="Packages" configuration="" />
       <Entry build="True" name="POSInterfaces" configuration="Debug" />
       <Entry build="True" name="Services" configuration="Debug" />
+      <Entry build="True" name="POSSQLServer" configuration="Debug" />
     </Configuration>
     <Configuration name="Release" ctype="CombineConfiguration">
       <Entry build="True" name="POSServer" configuration="Release" />
       <Entry build="True" name="Packages" configuration="" />
       <Entry build="True" name="POSInterfaces" configuration="Release" />
       <Entry build="True" name="Services" configuration="Release" />
+      <Entry build="True" name="POSSQLServer" configuration="Release" />
     </Configuration>
   </Configurations>
   <StartMode startupentry="POSServer" single="True">
@@ -18,6 +20,7 @@
     <Execute type="None" entry="Packages" />
     <Execute type="None" entry="POSInterfaces" />
     <Execute type="None" entry="Services" />
+    <Execute type="None" entry="POSSQLServer" />
   </StartMode>
   <MonoDevelop.ChangeLogAddIn.ChangeLogInfo policy="UpdateNearestChangeLog" />
   <Entries>
@@ -25,5 +28,6 @@
     <Entry filename="Packages.mdse" />
     <Entry filename="POSInterfaces/POSInterfaces.mdp" />
     <Entry filename="Services/Services.mdp" />
+    <Entry filename="POSSQLServer/POSSQLServer.mdp" />
   </Entries>
 </Combine>
