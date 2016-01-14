@@ -1,0 +1,1 @@
+Instead of a web based system, this is a full client/server architecture with autodiscovery of clients to servers, support for receipt printers, cash drawers, touch screens, etc.
